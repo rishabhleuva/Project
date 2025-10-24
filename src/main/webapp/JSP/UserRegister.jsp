@@ -13,18 +13,18 @@
   <div class="register-bg d-flex justify-content-center align-items-center min-vh-100">
     <div class="card register-card p-4 shadow">
       <h2 class="text-center mb-3 text-danger">JDelivery Signup</h2>
-      <form id="register-form">
+      <form id="register-form" action="${pageContext.request.contextPath}/UserRegistration">
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
-          <input type="text" class="form-control" id="name" placeholder="Enter your full name" required />
+          <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required />
         </div>
         <div class="mb-3">
           <label for="email" class="form-label">Email Address</label>
-          <input type="email" class="form-control" id="email" placeholder="you@email.com" required />
+          <input type="email" class="form-control" id="email" name="email" placeholder="you@email.com" required />
         </div>
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" placeholder="Create a password" required minlength="6" />
+          <input type="password" class="form-control" id="password" name="password" placeholder="Create a password" required minlength="6" />
         </div>
         <div class="mb-3">
           <label for="confirm-password" class="form-label">Confirm Password</label>

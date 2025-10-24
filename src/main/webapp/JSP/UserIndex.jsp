@@ -12,8 +12,8 @@
     <nav class="navbar">
         <div class="logo">Jdelivery</div>
         <ul class="nav-links">
-            <li><a href="#">Log in</a></li>
-            <li><a href="#">Sign up</a></li>
+            <li><a href="UserLogin.jsp">Log in</a></li>
+            <li><a href="UserRegister.jsp">Sign up</a></li>
         </ul>
     </nav>
 
@@ -50,8 +50,8 @@
         <div class="footer-container">
             <div class="footer-contact">
                 <strong>Contact Us:</strong>
-                <p>1800-123-456 | zomatoclone@email.com</p>
-                <p>123 Main Road, Delhi, India</p>
+                <p>1800-123-456 | Jdelivery@email.com</p>
+                <p>123 Main Road, Ahmedabad, India</p>
             </div>
             <div class="footer-links">
                 <strong>Quick Links</strong>
@@ -59,7 +59,7 @@
             </div>
         </div>
         <div class="footer-bottom">
-            Made with ❤️ for educational purposes | © 2025 Zomato Clone
+            Made with ❤️ for educational purposes | © 2025 Jdelivery
         </div>
     </footer>
     <script src="${pageContext.request.contextPath}/JS/UserIndex.js"></script>

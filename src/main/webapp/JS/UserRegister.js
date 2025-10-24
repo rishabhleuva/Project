@@ -18,8 +18,4 @@ document.getElementById('register-form').addEventListener('submit', function(e) 
     return;
   }
   
-  // TODO: Call backend API to register user
-  alert("Registration successful!\nName: "+name+"\nEmail: "+email);
-  // Redirect or clear form
-  this.reset();
 });
