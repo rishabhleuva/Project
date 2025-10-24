@@ -4,15 +4,14 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Jdelivery	</title>
  <link rel="stylesheet" href="${pageContext.request.contextPath}/CSS/UserIndex.css">
-</head>
+</head>	
 <body>
     <!-- Navbar -->
     <nav class="navbar">
-        <div class="logo">Zomato</div>
+        <div class="logo">Jdelivery</div>
         <ul class="nav-links">
-            <li><a href="#">Add Restaurant</a></li>
             <li><a href="#">Log in</a></li>
             <li><a href="#">Sign up</a></li>
         </ul>
@@ -20,36 +19,49 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <h1>Discover the best food & drinks in your city</h1>
+        <h1>Order food to your doorstep</h1>
         <div class="search-bar">
-            <input type="text" id="location" placeholder="📍 Enter your location">
-            <input type="text" id="search" placeholder="🔍 Search for restaurant, cuisine or dish...">
+            <input type="text" id="location" placeholder="Enter your location">
+            <input type="text" id="search" placeholder="Search for food or restaurant">
             <button onclick="searchRestaurant()">Search</button>
         </div>
     </section>
 
-    <!-- Food Categories -->
+    <!-- Category Section -->
     <section class="categories">
-        <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/1046/1046784.png" alt="Dining">
-            <h3>Dining Out</h3>
-        </div>
-        <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/3075/3075977.png" alt="Delivery">
-            <h3>Delivery</h3>
-        </div>
-        <div class="category-card">
-            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921822.png" alt="Nightlife">
-            <h3>Nightlife</h3>
-        </div>
+        <h2>What would you like to order?</h2>
+        <div id="category-list" class="category-list"></div>
+    </section>
+
+    <!-- Top Brands Section -->
+    <section class="brands">
+        <h2>Top Brands Near You</h2>
+        <div id="brand-list" class="brand-list"></div>
+    </section>
+
+    <!-- Restaurants Near User Section -->
+    <section class="restaurants">
+        <h2>Restaurants Near You</h2>
+        <div id="restaurant-list" class="restaurant-list"></div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Made with ❤️ for educational purposes | © 2025 Zomato Clone</p>
+        <div class="footer-container">
+            <div class="footer-contact">
+                <strong>Contact Us:</strong>
+                <p>1800-123-456 | zomatoclone@email.com</p>
+                <p>123 Main Road, Delhi, India</p>
+            </div>
+            <div class="footer-links">
+                <strong>Quick Links</strong>
+                <p><a href="#">Terms</a> | <a href="#">Privacy</a> | <a href="#">Help</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            Made with ❤️ for educational purposes | © 2025 Zomato Clone
+        </div>
     </footer>
-
     <script src="${pageContext.request.contextPath}/JS/UserIndex.js"></script>
-
 </body>
-</html>
+</html>         

@@ -1,0 +1,30 @@
+@charset "UTF-8";
+body {
+    background: #f8f8fc;
+}
+#wrapper {
+    min-height: 100vh;
+}
+#sidebar-wrapper {
+    min-width: 220px; max-width: 240px;
+    background: #fff;
+    border-right: 1px solid #e5e5e5;
+}
+.sidebar-heading {
+    color: #e23744;
+    letter-spacing: 1px;
+}
+.list-group-item.active {
+    background: #e23744;
+    color: #fff;
+    border: none;
+}
+.list-group-item {
+    font-size: 1.1em;
+}
+.table th, .table td {
+    vertical-align: middle;
+}
+.card {
+    border-radius: 1.2em;
+}
