@@ -33,7 +33,7 @@
         <!-- Top navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
             <div class="container-fluid">
-                <span class="navbar-brand mb-0 h1">Zomato Admin Panel</span>
+                <span class="navbar-brand mb-0 h1">Jdelivery Admin Panel</span>
                 <div>
                     <button class="btn btn-danger">Logout</button>
                 </div>

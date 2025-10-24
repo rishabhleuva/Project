@@ -1,0 +1,41 @@
+@charset "UTF-8";
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff4f6;
+  color: #222;
+}
+
+#sidebar-wrapper {
+  min-width: 240px;
+  background: white;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-heading {
+  color: #e23744;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.list-group-item.active {
+  background: #e23744;
+  color: white;
+}
+
+.card {
+  border-radius: 10px;
+}
+
+h2 {
+  color: #e23744;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.list-group-item:not(.active):hover {
+  background: #fee0e0;
+}
+
+form label {
+  font-weight: 600;
+}

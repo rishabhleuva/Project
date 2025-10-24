@@ -1,0 +1,24 @@
+@charset "UTF-8";
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.register-bg {
+  background: linear-gradient(135deg, #fff 60%, #faeff0 100%);
+  min-height: 100vh;
+}
+
+.register-card {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 18px;
+}
+
+.btn-danger {
+  background-color: #e23744;
+  border-color: #e23744;
+}
+.btn-danger:hover {
+  background-color: #c02533;
+}
