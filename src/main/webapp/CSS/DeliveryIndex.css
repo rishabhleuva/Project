@@ -1,0 +1,70 @@
+@charset "UTF-8";
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #fff5f6;
+  color: #222;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  min-width: 240px;
+  background: white;
+  border-right: 1px solid #ddd;
+}
+
+.sidebar-heading {
+  color: #e23744;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.list-group-item.active {
+  background: #e23744;
+  color: white;
+}
+
+.list-group-item {
+  font-size: 1.1rem;
+}
+
+/* Cards */
+.card {
+  border-radius: 10px;
+}
+
+h2 {
+  color: #e23744;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* Orders and deliveries list */
+.list-group-item {
+  margin-bottom: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.list-group-item:not(.active):hover {
+  background: #fee0e0;
+}
+
+button {
+  margin-left: 10px;
+}
+
+/* Forms */
+form label {
+  font-weight: 600;
+}
+
+form input:disabled {
+  background-color: #eee;
+}
+
+@media (max-width: 768px) {
+  #sidebar-wrapper {
+    min-width: 100%;
+  }
+}
