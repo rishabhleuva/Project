@@ -6,7 +6,8 @@ import javax.persistence.*;
 @Table(name = "admin")
 public class AdminPojo {
     
-
+	@Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
     private String email;

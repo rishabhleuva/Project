@@ -27,7 +27,7 @@ public class UserRegistration extends HttpServlet {
 			
 		new UserDao().InsertUser(p);
 		
-		response.sendRedirect("UserIndex.jsp");
+		response.sendRedirect("JSP/UserIndex.jsp");
 	}
 	
 

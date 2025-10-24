@@ -13,7 +13,7 @@
   <div class="register-bg d-flex justify-content-center align-items-center min-vh-100">
     <div class="card register-card p-4 shadow">
       <h2 class="text-center mb-3 text-danger">JDelivery Signup</h2>
-      <form id="register-form" action="${pageContext.request.contextPath}/UserRegistration">
+      <form id="register-form" action="${pageContext.request.contextPath}/UserRegistration" method="post">
         <div class="mb-3">
           <label for="name" class="form-label">Full Name</label>
           <input type="text" class="form-control" id="name" name="name" placeholder="Enter your full name" required />

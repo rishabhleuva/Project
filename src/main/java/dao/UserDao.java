@@ -1,95 +1,85 @@
 package dao;
-import java.util.List;
 
+import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-
 import pojo.UserPojo;
 import util.hibernateutil;
 
 public class UserDao {
-	
-	public void InsertUser(UserPojo w) {
 
-		Transaction tx = null;
-		try {
-			
-			Session session = hibernateutil.getsessionfactory().openSession();
-			tx = session.beginTransaction();
-			session.save(w);
-			tx.commit();
-			session.close();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("user not inserted");
-		}
-		
+	public void InsertUser(UserPojo w) {
+	    Transaction tx = null;
+	    Session session = null;
+	    try {
+	        session = hibernateutil.getsessionfactory().openSession();
+	        tx = session.beginTransaction();
+	        session.save(w);
+	        tx.commit();
+	    } catch (Exception e) {
+	        if (tx != null && tx.isActive()) {
+	            tx.rollback();
+	        }
+	        System.out.println("user not inserted: " + e.getMessage());
+	        e.printStackTrace();
+	    } finally {
+	        if (session != null && session.isOpen()) {
+	            session.close();
+	        }
+	    }
 	}
-	
-	public void DeleteUser(int id) {
-		Transaction tx = null;
-		
-		try {
-			Session session = hibernateutil.getsessionfactory().openSession();
-			tx = session.beginTransaction();
-			UserPojo p = session.get(UserPojo.class, id);
-			session.delete(p);
-			session.close();
-			
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("data not deleted");
-		}
-	}
-	
-	public void UpdateUser(UserPojo w) {
-		
-		Transaction tx = null;
-		
-		try {
-			Session session = hibernateutil.getsessionfactory().openSession();
-			tx = session.beginTransaction();
-			session.update(w);
-			tx.commit();
-			session.close();
-		} catch (Exception e) {
-			// TODO: handle exception
-			System.out.println("User not updated");
-		}
-		
-	}
-	
-	public UserPojo FetchUserbyId(int id) {
-		UserPojo u = null;
-		try {
-			Session session = hibernateutil.getsessionfactory().openSession();
-			u = session.get(UserPojo.class, id);
-			session.close();
-			
-		} catch (Exception e) {
-			System.out.println("User cannot be fetched");
-		}
-		
-		return u;
-	}
-	
-	public List<UserPojo> FetchUser(){
-		
-		List<UserPojo> user = null;
-		try {
-			Session session = hibernateutil.getsessionfactory().openSession();
-			user = session.createQuery("FROM UserPojo", UserPojo.class).list();
-			
-			
-		} catch (Exception e) {
-			System.out.println("users cannot be fetched");
-			// TODO: handle exception
-		}
-		return user;
-		
-	}
-	
+
+
+    public boolean deleteUser(int id) {
+        Transaction tx = null;
+        boolean result = false;
+        try (Session session = hibernateutil.getsessionfactory().openSession()) {
+            tx = session.beginTransaction();
+            UserPojo u = session.get(UserPojo.class, id);
+            if (u != null) {
+                session.delete(u);
+                result = true;
+            }
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            System.out.println("data not deleted: " + e.getMessage());
+        }
+        return result;
+    }
+
+    public boolean updateUser(UserPojo u) {
+        Transaction tx = null;
+        boolean result = false;
+        try (Session session = hibernateutil.getsessionfactory().openSession()) {
+            tx = session.beginTransaction();
+            session.update(u);
+            tx.commit();
+            result = true;
+        } catch (Exception e) {
+            if (tx != null) tx.rollback();
+            System.out.println("User not updated: " + e.getMessage());
+        }
+        return result;
+    }
+
+    public UserPojo fetchUserById(int id) {
+        UserPojo u = null;
+        try (Session session = hibernateutil.getsessionfactory().openSession()) {
+            u = session.get(UserPojo.class, id);
+        } catch (Exception e) {
+            System.out.println("User cannot be fetched: " + e.getMessage());
+        }
+        return u;
+    }
+
+    public List<UserPojo> fetchUsers() {
+        List<UserPojo> userList = null;
+        try (Session session = hibernateutil.getsessionfactory().openSession()) {
+            userList = session.createQuery("FROM UserPojo", UserPojo.class).list();
+        } catch (Exception e) {
+            System.out.println("Users cannot be fetched: " + e.getMessage());
+        }
+        return userList;
+    }
 }
-																																																																																														
