@@ -18,13 +18,14 @@
   >
     <div class="card login-card p-4 shadow">
       <h2 class="text-center mb-4 text-danger">JDelivery Sign In</h2>
-      <form id="login-form">
+      <form id="login-form" method="post" action="${pageContext.request.contextPath}/UserLogin">
         <div class="mb-3">
           <label for="email" class="form-label">Email Address</label>
           <input
             type="email"
             class="form-control"
             id="email"
+            name="email"
             placeholder="you@email.com"
             required
           />
@@ -35,6 +36,7 @@
             type="password"
             class="form-control"
             id="password"
+            name="password"
             placeholder="Enter your password"
             required
             minlength="6"
@@ -48,6 +50,5 @@
       </div>
     </div>
   </div>
-  <script src="${pageContext.request.contextPath}/JS/UserLogin.js"></script>
 </body>
 </html>

@@ -28,6 +28,20 @@ public class UserDao {
 	        }
 	    }
 	}
+	
+	public static UserPojo fetchUserbyEmail(String email) {
+		UserPojo w = null;
+		
+		try (Session session = hibernateutil.getsessionfactory().openSession()) {
+            w = session.createQuery("FROM UserPojo WHERE email = :email", UserPojo.class)
+                    .setParameter("email", email)
+                    .uniqueResult();
+        } catch (Exception e) {
+            System.out.println("User cannot be fetched: " + e.getMessage());
+        }
+		
+		return w;
+	}
 
 
     public boolean deleteUser(int id) {
