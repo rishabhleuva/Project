@@ -35,7 +35,7 @@
             <div class="container-fluid">
                 <span class="navbar-brand mb-0 h1">Jdelivery Admin Panel</span>
                 <div>
-                    <button class="btn btn-danger">Logout</button>
+                    <button class="btn btn-danger">Welcome</button>
                 </div>
             </div>
         </nav>
