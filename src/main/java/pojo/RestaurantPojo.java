@@ -12,8 +12,6 @@ public class RestaurantPojo {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String address;
 
     @Column(nullable = false, unique = true)
     private String email;
@@ -40,13 +38,7 @@ public class RestaurantPojo {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return address;
-	}
 
-	public void setAddress(String address) {
-		this.address = address;
-	}
 
 	public String getEmail() {
 		return email;
@@ -72,15 +64,18 @@ public class RestaurantPojo {
 		this.role = role;
 	}
 
-	public RestaurantPojo(String name, String address, String email, String password, String role) {
-		this.name = name;
-		this.address = address;
-		this.email = email;
-		this.password = password;
-		this.role = role;
-	} 
+    // Default constructor sets the role to "user"
+    public RestaurantPojo() {
+        this.role = "owner";
+    }
+
+    // Constructor with all fields except id
+    public RestaurantPojo(String name, String email, String password) {
+        this.name = name;
+        this.email = email;
+        this.password = password;
+        this.role = "user"; // Set default role here
+    } 
 	
-	public RestaurantPojo() {
-		
-	}
+	
 }

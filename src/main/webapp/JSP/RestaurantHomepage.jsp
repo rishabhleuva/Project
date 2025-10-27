@@ -17,8 +17,8 @@
     </nav>
     <div class="hero-content">
       <h1>Partner with Jdelivery and<br>grow your business</h1>
-      <p class="bold-promo">0% commission for 1st month!<br><span class="promo-note">Only valid for new restaurant partners.</span></p><br>
-      <button class="cta">Register your restaurant</button>
+      <p class="bold-promo">0% commission for 1st month!<br><span class="promo-note">Only valid for new restaurant partners.</span></p><br><br>
+      <a class="cta" href="${pageContext.request.contextPath}/JSP/RestaurantRegister.jsp">Register your restaurant</a><br>
     </div>
   </header>
 

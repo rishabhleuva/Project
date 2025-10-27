@@ -59,6 +59,7 @@ nav {
   border-radius: 8px;
   cursor: pointer;
   margin-top: 12px;
+  text-decoration: none;
 }
 
 .signup-info {
@@ -226,6 +227,8 @@ footer {
   text-align: right;
   max-width: 300px;
 }
+
+
 
 @media (max-width: 900px) {
   .benefits-list, .testimonial-cards {

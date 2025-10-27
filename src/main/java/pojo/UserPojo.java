@@ -34,14 +34,6 @@ public class UserPojo {
         this.role = "user"; // Set default role here
     }
 
-    // Constructor with all fields including role (optional if needed)
-    public UserPojo(String name, String email, String password, String role) {
-        this.name = name;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-    }
-
     // Getters and setters
     public int getId() {
         return id;
